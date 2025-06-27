@@ -18,7 +18,7 @@ public class OpenAI {
     @GetMapping("/")
     public String homepage()
     {
-        return "index.jsp";
+        return "index";
     }
 
     @GetMapping("/prompt/{message}")
