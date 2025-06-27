@@ -24,7 +24,7 @@ public class OpenAI {
     public String promptAnswer(@PathVariable String message)
     {
         String response=chatModel.call(message);
-
+        //some checking
         return response;
     }
 }
