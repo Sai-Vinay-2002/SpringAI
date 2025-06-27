@@ -1,5 +1,7 @@
 package com.bolt.SpringAI;
 
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -8,11 +10,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class OpenAI {
-    private OpenAiChatModel chatModel;
+    private ChatClient chatClient;
 
-    public OpenAI(OpenAiChatModel chatModel)
+    public OpenAI(ChatClient.Builder builder)
     {
-        this.chatModel=chatModel;
+        this.chatClient=builder.build() ;
     }
 
     @GetMapping("/")
@@ -24,7 +26,17 @@ public class OpenAI {
     @GetMapping("/prompt/{message}")
     public ModelAndView promptAnswer(@PathVariable String message, ModelAndView mv)
     {
-        String response=chatModel.call(message);
+        ChatResponse chatResponse=chatClient
+                .prompt(message)
+                .call()
+                .chatResponse();
+
+        System.out.println(chatResponse.getMetadata().getModel());
+
+        String response=chatResponse
+                .getResult()
+                .getOutput()
+                .getText();
 
         mv.addObject("response",response);
         mv.setViewName("response");
