@@ -4,6 +4,7 @@ import org.springframework.ai.openai.OpenAiChatModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class OpenAI {
@@ -20,11 +21,13 @@ public class OpenAI {
         return "index.jsp";
     }
 
-    @GetMapping()
-    public String promptAnswer(@PathVariable String message)
+    @GetMapping("/prompt/{message}")
+    public ModelAndView promptAnswer(@PathVariable String message, ModelAndView mv)
     {
         String response=chatModel.call(message);
-        //some more checking
-        return response;
+
+        mv.addObject("response",response);
+        mv.setViewName("response");
+        return mv;
     }
 }
