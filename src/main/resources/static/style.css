@@ -1,0 +1,74 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+#main {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Heading */
+#main h1 {
+    margin-bottom: 25px;
+    color: #333;
+    font-size: 1.8rem;
+}
+
+/* Label */
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    text-align: left;
+}
+
+/* Input Field */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit Button */
+input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

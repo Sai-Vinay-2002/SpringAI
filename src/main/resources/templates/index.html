@@ -1,13 +1,19 @@
-
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>SpringAI</title>
+
+    <link rel="stylesheet" type="text/css" href="/style.css?v=1">
+
 </head>
 <body>
-<form action="prompt">
-<label for="search">Enter text here</label>
-<input type="text" id="search" name="search"><br>
-<input type="button" value="Ask anything">
+<form action="/prompt" >
+    <div id="main">
+        <label for="search">Enter text here</label>
+        <input type="text" id="search" name="message" placeholder="Ask anything"><br>
+        <input type="submit" value="Search">
+    </div>
 </form>
 </body>
 </html>
