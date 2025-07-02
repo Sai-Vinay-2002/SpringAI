@@ -1,14 +1,14 @@
-
+<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
 <head>
-
-<head>
+    <meta charset="UTF-8">
+    <title>Response</title>
+    <link rel="stylesheet" type="text/css" href="/response.css">
+</head>
 <body>
-
-<p th:text>
-${response}
-</p>
-
-<body>
+<div class="response-container">
+    <h2>AI Response</h2>
+    <p th:text="${response}"></p>
+</div>
+</body>
 </html>

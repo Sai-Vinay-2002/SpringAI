@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>SpringAI</title>
-
-    <link rel="stylesheet" type="text/css" href="/style.css?v=1">
-
+    <link rel="stylesheet" type="text/css" href="/style.css?v=2">
 </head>
 <body>
-<form action="/prompt" >
-    <div id="main">
-        <label for="search">Enter text here</label>
-        <input type="text" id="search" name="message" placeholder="Ask anything"><br>
-        <input type="submit" value="Search">
+<div id="main1">
+    <div id="left"></div>
+    <div id="right">
+        <div id="chat-area">
+            <div id="response" th:if="${response}">
+                <h3>AI Response:</h3>
+                <p th:text="${response}"></p>
+            </div>
+        </div>
+
+        <form action="/prompt" method="get" id="chat-form">
+            <textarea id="search" name="message" placeholder="Type here..."></textarea>
+            <input type="submit" value="Search">
+        </form>
     </div>
-</form>
+</div>
 </body>
 </html>
