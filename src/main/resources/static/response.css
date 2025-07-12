@@ -43,3 +43,25 @@ html, body {
 html {
     scroll-behavior: smooth;
 }
+
+/* Image section */
+.image-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.image-section h2 {
+    color: #0dcaf0;
+    margin-bottom: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease;
+}
+
+.image-section img:hover {
+    transform: scale(1.02);
+}
